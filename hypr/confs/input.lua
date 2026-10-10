@@ -14,7 +14,6 @@ hl.config({
     },
 })
 
-hl.bind("SUPER + ALT + CTRL + I", hl.dsp.exec_cmd("$HOME/.config/hypr/setInput.sh"))
 
 hl.config({
     cursor = {

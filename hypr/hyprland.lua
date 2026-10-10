@@ -17,6 +17,10 @@ require("confs.binds.workspace")
 require("confs.binds.zoom")
 require("confs.binds.hy3")
 
+hl.device({
+    name = "uniw0001:00-093a:0255-touchpad",
+    sensitivity = 1.0
+})
 
 -- window_rule
 hl.bind("SUPER + SHIFT + I", hl.dsp.exec_cmd("pypr stash_send   Follow"))
