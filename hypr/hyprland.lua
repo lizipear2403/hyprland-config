@@ -19,7 +19,7 @@ require("confs.binds.hy3")
 
 hl.device({
     name = "uniw0001:00-093a:0255-touchpad",
-    sensitivity = 1.0
+    sensitivity = 0.3
 })
 
 -- window_rule

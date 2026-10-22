@@ -24,7 +24,7 @@ hl.bind(generateKeyBinds({ mainMod, "O" }), function()
     end
 end)
 hl.bind(generateKeyBinds({ thrMod, slaveMod, "L" }), hl.dsp.exec_cmd("hyprlock"))
-hl.bind(generateKeyBinds({ mainMod, "N" }), hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(generateKeyBinds({ mainMod, "N" }), hl.dsp.exec_cmd("mako"))
 hl.bind(generateKeyBinds({ mainMod, "V" }), hl.dsp.exec_cmd("~/.local/bin/cliphist-rofi"))
 hl.bind(generateKeyBinds({ mainMod, "Q" }), hl.dsp.exec_cmd(terminal))
 hl.bind(generateKeyBinds({ mainMod, "E" }), hl.dsp.exec_cmd(fileManager))
