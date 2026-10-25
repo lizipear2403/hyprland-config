@@ -1,8 +1,0 @@
-#!/bin/bash
-#
-# types=$(wl-paste --list-types 2>/dev/null)
-# cliphist store
-# if echo "$types" | grep -q 'image/'; then
-#     sleep 2
-#     wl-paste > /mnt/localNetDisk/clip.png
-# fi
