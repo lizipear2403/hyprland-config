@@ -25,7 +25,7 @@ local HJKL_DIR = {
 ---@return integer
 local function calculateWorkspaceIndex(activeWorkspace, direction)
     if direction == "Left" then
-        if activeWorkspace.id == 11 then return 15 end
+        if activeWorkspace.id == 10 then return 15 end
         if activeWorkspace.id == 1 then return 9 end
         return activeWorkspace.id - 1
     else

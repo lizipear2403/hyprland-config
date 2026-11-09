@@ -1,6 +1,6 @@
 -- binds/ 共享工具与常量
--- 注意: 以下均为全局变量, 供 binds/ 下所有文件使用; 改动此处会同步影响所有引用方
 
+-- WINDOW_POS = {}
 --- 把 { "SUPER", "ALT", "A" } 拼成 "SUPER + ALT + A"
 ---@param keyBinds string[]
 ---@return string

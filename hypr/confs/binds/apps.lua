@@ -23,7 +23,7 @@ hl.bind(generateKeyBinds({ mainMod, "O" }), function()
         hl.dispatch(hl.dsp.window.clear_tags({ window = hl.get_active_window() }))
     end
 end)
-hl.bind(generateKeyBinds({ thrMod, slaveMod, "L" }), hl.dsp.exec_cmd("hyprlock"))
+-- hl.bind(generateKeyBinds({ thrMod, slaveMod, "L" }), hl.dsp.exec_cmd("hyprlock"))
 hl.bind(generateKeyBinds({ mainMod, "N" }), hl.dsp.exec_cmd("mako"))
 hl.bind(generateKeyBinds({ mainMod, "V" }), hl.dsp.exec_cmd("~/.local/bin/cliphist-rofi"))
 hl.bind(generateKeyBinds({ mainMod, "Q" }), hl.dsp.exec_cmd(terminal))

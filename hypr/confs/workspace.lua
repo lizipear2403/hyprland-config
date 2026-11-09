@@ -1,4 +1,5 @@
 require("confs.binds.scripts")
+window_count = 0
 
 local function isHy3Loaded()
     if hl.plugin.hy3 then
@@ -19,25 +20,56 @@ end
 -- BIND -> OPEN SPECIAL
 --
 
+local function notify(txt)
+    hl.notification.create({
+        text = txt,
+        timeout = 5000,
+        icon = 1
+    })
+end
 
-local function processDraftWorkspace()
-    local dsws = hl.get_workspaces()
-    for _, ws in ipairs(dsws) do
-        if ws.name == "special:draft" then
-            if ws.is_empty then
-                hl.exec_cmd("kitty  --class notes nvim $HOME/Notes/Notes/")
+
+
+local function draftWindow(cmd, title_keywords)
+    local windows = hl.get_workspace_windows("special:draft")
+    local EXITIS = false
+    for _, win in pairs(windows) do
+        if string.find(win.title, title_keywords) then
+            EXITIS = true
+            -- if WINDOW_POS[title_keywords] == false then
+            --     notify(title_keywords)
+            --     hl.dispatch(hl.dsp.window.move({
+            --         window = win,
+            --         x = 100,
+            --         y = 100,
+            --         relative = true
+            --     }))
+            --     WINDOW_POS[title_keywords] = true
+            -- end
+            local ws = hl.get_workspace("special:draft")
+            if ws.active then
                 hl.dispatch(hl.dsp.workspace.toggle_special("draft"))
-                -- FLAG = true
-                return
             else
-                hl.dispatch(hl.dsp.workspace.toggle_special("draft"))
+                hl.dispatch(hl.dsp.focus({ window = win }))
             end
+            break
         end
+    end
+    if not EXITIS then
+        hl.dispatch(hl.dsp.focus({ workspace = "special:draft" }))
+        hl.exec_cmd(cmd)
+        -- WINDOW_POS[title_keywords] = false
+        -- table.insert(WINDOW_POS, )
+        -- table.insert(window_pos[title_keywords] , )
     end
 end
 
 hl.bind(generateKeyBinds({ mainMod, "D" }), function()
-    processDraftWorkspace()
+    draftWindow("kitty  --class notes nvim $HOME/Notes/Notes/", "nvim")
+end)
+
+hl.bind(generateKeyBinds({ mainMod, "B" }), function()
+    draftWindow("vivaldi", "Vivaldi")
 end)
 
 --
