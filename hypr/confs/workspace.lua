@@ -11,41 +11,12 @@ end
 
 
 
--- hl.exec_cmd("kitty  --class notes nvim $HOME/Notes/Notes/")
--- FLAG = FALSE ;; Draft NOT INIT
--- BIDN -> INITDRAFT
--- FALG = TRUE
--- OPEN NOTE WINDOW
--- MOVE TO SPECIAL
--- BIND -> OPEN SPECIAL
---
-
-local function notify(txt)
-    hl.notification.create({
-        text = txt,
-        timeout = 5000,
-        icon = 1
-    })
-end
-
-
-
 local function draftWindow(cmd, title_keywords)
     local windows = hl.get_workspace_windows("special:draft")
-    local EXITIS = false
+    local EXIT = false
     for _, win in pairs(windows) do
         if string.find(win.title, title_keywords) then
-            EXITIS = true
-            -- if WINDOW_POS[title_keywords] == false then
-            --     notify(title_keywords)
-            --     hl.dispatch(hl.dsp.window.move({
-            --         window = win,
-            --         x = 100,
-            --         y = 100,
-            --         relative = true
-            --     }))
-            --     WINDOW_POS[title_keywords] = true
-            -- end
+            EXIST = true
             local ws = hl.get_workspace("special:draft")
             if ws.active then
                 hl.dispatch(hl.dsp.workspace.toggle_special("draft"))
@@ -55,12 +26,9 @@ local function draftWindow(cmd, title_keywords)
             break
         end
     end
-    if not EXITIS then
+    if not EXIST then
         hl.dispatch(hl.dsp.focus({ workspace = "special:draft" }))
         hl.exec_cmd(cmd)
-        -- WINDOW_POS[title_keywords] = false
-        -- table.insert(WINDOW_POS, )
-        -- table.insert(window_pos[title_keywords] , )
     end
 end
 
@@ -72,10 +40,6 @@ hl.bind(generateKeyBinds({ mainMod, "B" }), function()
     draftWindow("vivaldi", "Vivaldi")
 end)
 
---
--- hl.bind("SUPER + CTRL + T", function()
---     processDraftWorkspace()
--- end)
 
 
 
@@ -102,14 +66,6 @@ local function setMainWorkspaces()
         )
         a = a + 1
     end
-    -- while a <= 15 do
-    --     hl.workspace_rule({
-    --         workspace = tostring(a),
-    --         layout = isHy3Loaded(),
-    --         monitor = "HDMI-A-1",
-    --     })
-    --     a = a + 1
-    -- end
 end
 
 local function setSlaveMonitorWorksapces()

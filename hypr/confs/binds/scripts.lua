@@ -13,20 +13,6 @@ function generateKeyBinds(keyBinds)
 end
 
 local hy3   = hl.plugin.hy3
---
--- function doFocusMoveDispatcher(workspace, direc)
---     if workspace == nil then return hl.dispatch(hl.dsp.no_op()) end
---     -- hl.notification.create({
---     --     text = tostring(workspace.tiled_layout),
---     --     timeout = 10000,
---     -- })
---     if workspace.tiled_layout ~= "hy3" then
---         hl.dispatch(hl.dsp.focus({ direction = direc }))
---     else
---         hl.dispatch(hy3.move_focus(direc, { warp = true, once = true }))
---     end
--- end
-
 mainMod     = "SUPER"
 slaveMod    = "CTRL"
 secMod      = "SHIFT"

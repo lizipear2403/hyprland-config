@@ -62,38 +62,3 @@ hl.gesture({
         focusMoveWorkspace("Right")
     end
 })
--- hl.gesture({
---     fingers = 4,
---     direction = "horizontal",
---     action = {
---         start = function(e)
---             hl.notification.create({
---                 text = "start: type=" ..
---                     e.type ..
---                     " time_ms=" ..
---                     e.time_ms .. " fingers=" .. e.fingers .. " delta=(" .. e.delta.x .. ", " .. e.delta.y .. ")",
---                 timeout = 1000,
---                 icon = 1
---             })
---         end,
---         -- update = function(e) hl.notification.create({ text = "update: type=" ..
---         -- e.type ..
---         -- " time_ms=" .. e.time_ms .. " fingers=" .. e.fingers .. " delta=(" .. e.delta.x .. ", " .. e.delta.y .. ")", timeout = 1000, icon = 1 }) end,
---         finish = function(e)
---             hl.notification.create({
---                 text = "finish: type=" ..
---                     e.type .. " time_ms=" .. e.time_ms .. " cancelled=" .. tostring(e.cancelled),
---                 timeout = 1000,
---                 icon = 1
---             })
---         end
---     }
--- })
--- hl.gesture({
---     fingers = 2,
---     direction = "pinchin",
---     action = function()
---         hl.dispatch(hl.dsp.exec_cmd('pypr-client zoom '))
---         hl.dispatch(hl.dsp.submap("ZOOM"))
---     end,
--- })

@@ -24,22 +24,10 @@ hl.device({
 
 hl.bind("SUPER + SHIFT + I", hl.dsp.exec_cmd("pypr stash_send   Follow"))
 hl.bind("SUPER + SHIFT + O", hl.dsp.exec_cmd("pypr stash_toggle  Follow"))
--- window_rule
--- hl.window_rule({
---     name = "draft-browser",
---     match = {
---         class = "^([Vv]aldi-stable)$"
---     },
---     workspace = "special:draft",
---     -- float = true,
---     -- center = true
--- })
 hl.window_rule({
     match = {
         workspace = "special:draft",
 
     },
-    -- size = { 1200, 1200 },
     float = false,
-    -- center = true
 })

@@ -1,7 +1,6 @@
 hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpm reload")
     hl.exec_cmd("pypr")
-    -- hl.exec_cmd("swaync")
     hl.exec_cmd("waybar")
     hl.exec_cmd("kanata --cfg $HOME/.config/kanata/config.kbd")
     hl.exec_cmd("fcitx5 -d --replace")
